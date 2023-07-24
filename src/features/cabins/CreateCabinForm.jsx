@@ -14,10 +14,10 @@ import { createEditCabin } from "../../services/apiCabins";
 function CreateCabinForm({ cabinToEdit = {} }) {
   const { id: editId, ...editValues } = cabinToEdit;
   const isEditSession = Boolean(editId);
-
   const { register, handleSubmit, reset, getValues, formState } = useForm({
     defaultValues: isEditSession ? editValues : {},
   });
+
   const { errors } = formState;
   const queryClient = useQueryClient();
   const { mutate: createCabin, isLoading: isCreating } = useMutation({
@@ -51,7 +51,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
 
     if (isEditSession)
       editCabin({ newCabinData: { ...data, image }, id: editId });
-    else createCabin({ ...data, image: data.image[0] });
+    else createCabin({ ...data, image });
   }
 
   function onError(errors) {
