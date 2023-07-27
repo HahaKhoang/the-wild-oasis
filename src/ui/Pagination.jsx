@@ -79,7 +79,6 @@ function Pagination({ count }) {
   }
 
   if (pageCount <= 1) return null;
-
   return (
     <StyledPagination>
       <P>
