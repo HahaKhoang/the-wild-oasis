@@ -78,7 +78,7 @@ function BookingDetail() {
               disabled={isDeleting}
               onConfirm={() =>
                 deleteBooking(bookingId, {
-                  onSettled: navigate(-1),
+                  onSettled: () => navigate(-1),
                 })
               }
             />
