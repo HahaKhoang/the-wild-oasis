@@ -13,6 +13,7 @@ function SignupForm() {
   function onSubmit(data) {
     console.log(data);
   }
+
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <FormRow label="Full name" error={errors?.fullName?.message}>
