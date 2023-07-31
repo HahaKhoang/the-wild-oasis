@@ -4,7 +4,7 @@ import { getStaysTodayActivity } from "../../services/apiBookings";
 export function useTodayActivity() {
   const { isLoading, data: activities } = useQuery({
     queryFn: getStaysTodayActivity,
-    queryKey: ["todays-activity"],
+    queryKey: ["today-activity"],
   });
 
   return { activities, isLoading };
